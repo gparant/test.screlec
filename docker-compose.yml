@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy-test
+    ports:
+      - "1080:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+
+
+  middle:
+    build: ./docker/
+    container_name: middle-test
+    volumes:
+      - ./middle:/var/www/html
+      - ./docker/logs/users/apache2:/var/log/apache2
+      - ./docker/conf.dev/ext-xdebug.ini:/usr/local/etc/php/conf.d/ext-xdebug.ini
+    environment:
+      VIRTUAL_HOST: middle.test.dev
