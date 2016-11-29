@@ -23,7 +23,7 @@ The project run with containers docker.
 
 You can update you host to access at the container docker with your navigator.
 Add `middle.screlec.dev` in your host (/etc/host) to access middle container docker.
- > 127.0.0.1 middle.test.dev
+ > 127.0.0.1 project.test.dev
 
 Once project has clone :
 * create containers : `docker-compose build`.
@@ -90,17 +90,30 @@ documentation Mouf Framework:
 
 [![Mouf install](img/mouf_video.png)](http://mouf-php.com/packages/mouf/mouf/doc/installing_mouf.md)
 
+## Install vueJs
+
+The front with **VueJs** is a field `src/front`.
+
+```
+> npm install
+```
+VueJs, vue-router, webpack... is installed.
+
+We can use Webpack or other technologies, It's like you want :)
+
 # What you should achieve
 
-Basically, we want ou to realize 2 parts
-* Middle : get information of form user Front by POST methode HTTP
-* Front : form to create user and send data in container Middle
+## Test Project
 
-## Middle
+Basically, we want to implement 2 function in controller :
+* save user : save user *(you can use class UserBean)*
+* get user : return JSON list of users
 
-This part permit to receive the data of form since URL that you must to define.
+we want to implement 2 screens :
+* user form : add user
+* user view : user informations.
 
-### Your Job :
+### Your Job Back :
 
 So you can develop an function to receive data send from a form in the Front container. You can create a URL in controller `@URL("/testformulaire")`. This URL contains parameters sent from the form `@param string name`. And so you can declare the method HTTP to receive your data with URL, for example : `@Get()`or`@Post()`...
 
@@ -133,13 +146,23 @@ You can check your URL defined in mouf  :
 * http://middle.test.dev:1080/vendor/mouf/mouf/splashViewUrls/
 * MVC -> Splash -> View URLs
 
-## Front
-Basically, we want ou to implement 2 screens :
-* user form : add user
-* user view : user informations.
+### Your Job front :
 
-### Job form
+You must write a single page apps using:
+- Vuejs
+- Vuex
+- Vue-router
 
+This app should allow to :
+- List all user
+- Add a new user
+
+The page should not refresh between calls, there must be validation (using a random library or a custom validation), and new elements should be displayed inside the list.
+
+You can use our skeleton, it use webpack for dependency management. Feel free to watch the config file, some aliases has been created.
+You can aswell use another method.
+
+##### Job form
 ![form](/img/form.png)
 
 You must to create form with next informations :
@@ -156,9 +179,9 @@ You must to create form with next informations :
 * FirstName is not null
 * Phone < 12 numbers
 
-### Job view
+##### Job view
 
-![view](/img/view.png)
+![view](/img/manage.png)
 
 The view must have information of previous creating user :
 >- LastName
@@ -170,6 +193,6 @@ The view must have information of previous creating user :
 
 You have **one day** for this Work. If you have a problem or error, you can contact me.
 
-When you finish, send me your data. I analyse your work and I give you feedback.
+When you finish, send me your data with pull request in repository GitHub : https://github.com/gparant/test.screlec. I analyse your work and I give you feedback.
 
-**The test creates yours develop environment and evaluates your competencies for the project. If you are up to it, you will gain much more thereafter ... Good luck**
+**The test creates yours develop environment and evaluates your competencies for the project. If you are up to it, you will gain much more thereafter ... Good luck and, above all, have fun! **
