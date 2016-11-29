@@ -67,6 +67,13 @@ Once the download of components Mouf Framework finished. You must to go at:
 
 Add the name and password, example : (admin,admin)
 
+![config](img/config.png)
+
+You must to be configure framework.
+
+![save_config](img/save_config.png)
+
+Save the configurations
 
 Nice your project is installed. You can go to http://middle.test.dev:1080/ , you should see :
 
