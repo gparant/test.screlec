@@ -69,7 +69,7 @@ Add the name and password, example : (admin,admin)
 
 ![config](img/config.png)
 
-You must to be configure framework.
+You must to be configure **Mouf** framework.
 
 ![save_config](img/save_config.png)
 
@@ -78,6 +78,10 @@ Save the configurations
 Nice your project is installed. You can go to http://middle.test.dev:1080/ , you should see :
 
 ![index](img/index.png)
+
+You can check the status of Framework Mouf on Mouf Home page : (http://project.test.dev:1080/vendor/mouf/mouf/).
+
+![mouf_status](img/mouf_status.png)
 
 Also, if you take a look to the project's files, you will see, among others, the following files:
 
