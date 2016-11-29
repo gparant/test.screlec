@@ -67,6 +67,7 @@ Once the download of components Mouf Framework finished. You must to go at:
 
 Add the name and password, example : (admin,admin)
 
+
 Nice your project is installed. You can go to http://middle.test.dev:1080/ , you should see :
 
 ![index](img/index.png)
@@ -74,17 +75,17 @@ Nice your project is installed. You can go to http://middle.test.dev:1080/ , you
 Also, if you take a look to the project's files, you will see, among others, the following files:
 
 * **middle** *field of back container*
-  * src *your php classes are here*
-    * Controllers *controllers should be placed here*
-      * RootController.php
-    * Font *files vueJs*
-  * views *store the VIEWS called by your Controllers*
-    * root
-      * index.twig *the view called to display the Splash welcome screen*
-* nginx *proxy of reverse proxy server for HTTP, HTTPS, SMTP, POP3, and IMAP*
-* img *picture readme and specification*
-* docker *docker file and configuration*
-* docker-compose.yml *file for docker-compose*
+  * **src** *your php classes are here*
+    * **Controllers** *controllers should be placed here*
+      * **RootController**.php
+    * **Font** *files vueJs*
+  * **views** *store the VIEWS called by your Controllers*
+    * **root**
+      * **index.twig** *the view called to display the Splash welcome screen*
+* **nginx** *proxy of reverse proxy server for HTTP, HTTPS, SMTP, POP3, and IMAP*
+* **img** *picture readme and specification*
+* **docker** *docker file and configuration*
+* **docker-compose.yml** *file for docker-compose*
 
 documentation Mouf Framework:
 
