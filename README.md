@@ -6,9 +6,9 @@ If you finish you win 100$ and we recontact to you for more components.
 ## SKILL
 To achieve this test, you will need basic skills in :
 #### FrontEnd (JavaScript)
-In this project the FrontEnd use **VueJs** technology (JavaScript). You can check the documentation in 
+In this project the FrontEnd use **VueJs** technology (JavaScript). You can check the documentation in
 #### BackEnd (PHP)
-Moreover, which is quite important to us, you will also need to e skilled in discovering and learning Mouf. No worries, there is plenty of documentation to help you install the framework, and to teach you how to use the 2 main packages required to code this example : 
+Moreover, which is quite important to us, you will also need to e skilled in discovering and learning Mouf. No worries, there is plenty of documentation to help you install the framework, and to teach you how to use the 2 main packages required to code this example :
 *  **Using the MVC package (Splash):** [http://mouf-php.com/packages/mouf/mvc.splash/version/8.0-dev/README.md](http://mouf-php.com/packages/mouf/mvc.splash/version/8.0-dev/README.md)
 
 ## Intall
@@ -24,7 +24,7 @@ The project run with containers docker.
 You can update you host to access at the container docker with your navigator.
 Add `middle.screlec.dev` in your host (/etc/host) to access middle container docker.
  > 127.0.0.1 middle.test.dev
- 
+
 Once project has clone :
 * create containers : `docker-compose build`.
 * lunch containers : `docker-compose up`
@@ -73,11 +73,11 @@ Nice your project is installed. You can go to http://middle.test.dev:1080/ , you
 
 Also, if you take a look to the project's files, you will see, among others, the following files:
 
-* **front** *field of front container*
 * **middle** *field of back container*
   * src *your php classes are here*
     * Controllers *controllers should be placed here*
       * RootController.php
+    * Font *files vueJs*
   * views *store the VIEWS called by your Controllers*
     * root
       * index.twig *the view called to display the Splash welcome screen*
@@ -100,7 +100,7 @@ Basically, we want ou to realize 2 parts
 
 This part permit to receive the data of form since URL that you must to define.
 
-### Your Job : 
+### Your Job :
 
 So you can develop an function to receive data send from a form in the Front container. You can create a URL in controller `@URL("/testformulaire")`. This URL contains parameters sent from the form `@param string name`. And so you can declare the method HTTP to receive your data with URL, for example : `@Get()`or`@Post()`...
 
@@ -109,7 +109,7 @@ You can see an example thereafter
  in `src/Controllers/RootController.php`
 ```php
 	/**
-     * 
+     *
      * @URL("/opportunity/save")
      * @Post
      *
@@ -117,7 +117,7 @@ You can see an example thereafter
      * @param int $opportunityId
      * ...
      */
-     
+
      public function testFormulaire(int $opportunityId){
         ...
      }
@@ -129,20 +129,20 @@ This function `testFormulaire` is linked with URL  `"/opportunity/save"` and wai
 * `@param` define param in HTTP request
 * `@Post()` or `@Get()` define HTTP method of this URL
 
-You can check your URL defined in mouf  : 
-* http://middle.test.dev:1080/vendor/mouf/mouf/splashViewUrls/ 
+You can check your URL defined in mouf  :
+* http://middle.test.dev:1080/vendor/mouf/mouf/splashViewUrls/
 * MVC -> Splash -> View URLs
 
 ## Front
 Basically, we want ou to implement 2 screens :
-* user form : add user 
+* user form : add user
 * user view : user informations.
 
 ### Job form
 
 ![form](/img/form.png)
 
-You must to create form with next informations : 
+You must to create form with next informations :
 >- LastName
 >- FirtName
 >- Mail

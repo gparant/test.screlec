@@ -13,10 +13,10 @@ services:
 
   middle:
     build: ./docker/
-    container_name: middle-test
+    container_name: project-test
     volumes:
       - ./middle:/var/www/html
       - ./docker/logs/users/apache2:/var/log/apache2
       - ./docker/conf.dev/ext-xdebug.ini:/usr/local/etc/php/conf.d/ext-xdebug.ini
     environment:
-      VIRTUAL_HOST: middle.test.dev
+      VIRTUAL_HOST: project.test.dev
