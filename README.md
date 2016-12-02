@@ -1,6 +1,6 @@
 # Hello, welcome to the test
 
-Your mission is to finish that exercise in One day.
+Your mission is to finish that exercise in one day.
 
 To start you can fork the repository.
 
