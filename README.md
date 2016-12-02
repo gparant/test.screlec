@@ -1,6 +1,7 @@
 # Hello, welcome to the test
 
 Your mission is to finish that exercise in one day.
+When you have finished, please contact me.
 
 To start you can fork the repository.
 
