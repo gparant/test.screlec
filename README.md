@@ -125,13 +125,13 @@ we want to implement 2 screens :
 * user form : add user
 * user view : user informations.
 
-### Your Job Back :
+### Your Job in Controller :
 
 So you can develop an function to receive data send from a form in the Front container. You can create a URL in controller `@URL("/testformulaire")`. This URL contains parameters sent from the form `@param string name`. And so you can declare the method HTTP to receive your data with URL, for example : `@Get()`or`@Post()`...
 
 You can see an example thereafter
 
- in `src/Controllers/RootController.php`
+ in `middle/src/Controllers/RootController.php`
 ```php
 	/**
      *
@@ -159,6 +159,7 @@ You can check your URL defined in mouf  :
 * MVC -> Splash -> View URLs
 
 ### Your Job front :
+(files in middle/src/front)
 
 You must write a single page apps using:
 - Vuejs
