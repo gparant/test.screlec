@@ -159,7 +159,7 @@ You can check your URL defined in mouf  :
 * MVC -> Splash -> View URLs
 
 ### Your Job front :
-(files in middle/src/front)
+`(files in middle/src/front)`
 
 You must write a single page apps using:
 - Vuejs
