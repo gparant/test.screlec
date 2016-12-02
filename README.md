@@ -1,7 +1,8 @@
 # Hello, welcome to the test
 
 Your mission is to finish that exercise in One day.
-If you finish you win 100$ and we recontact to you for more components.
+
+To start you can fork the repository.
 
 ## SKILL
 To achieve this test, you will need basic skills in :
