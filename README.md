@@ -92,6 +92,12 @@ Also, if you take a look to the project's files, you will see, among others, the
     * **Controllers** *controllers should be placed here*
       * **RootController**.php
     * **Font** *files vueJs*
+      * **node_modules** *your node module are here*
+      * **src** *your js classes are here*
+        * **Components** *components of vuejs*
+        * **Routers** *components of router of your vues in vuejs*
+        * **Services** *Data provider services*
+        * **Store** *Store vuejs*
   * **views** *store the VIEWS called by your Controllers*
     * **root**
       * **index.twig** *the view called to display the Splash welcome screen*
@@ -165,7 +171,6 @@ You can check your URL defined in mouf  :
 
 You must write a single page apps using:
 - Vuejs
-- Vuex
 - Vue-router
 
 This app should allow to :
@@ -175,6 +180,9 @@ This app should allow to :
 The page should not refresh between calls, there must be validation (using a random library or a custom validation), and new elements should be displayed inside the list.
 
 You can use our skeleton, it use webpack for dependency management. Feel free to watch the config file, some aliases has been created.
+
+With that methode, you need to compile your code with command  `> webpack`
+
 You can aswell use another method.
 
 ##### Job form
@@ -187,6 +195,32 @@ You must to create form with next informations :
 >- Phone
 >- Country
 >- ...
+
+There are exemple in `src/front/src/user/user.vue`.You must to add form code html in :
+```HTML
+<template>
+  <div>
+    <div > Create user</div>
+    <form >
+      ...
+    </form>
+  </div>
+</template>
+```
+
+Function of this view :
+* methode
+`submit` : Should call the backend and store data to be displayed in the list.
+
+You must to create function to send data on URL. exemple :
+```JavaScript
+submit: function(e) {
+
+  //Should call the backend and store data to be displayed in the list.
+  ajax.post("/user",{ name:this.name, firstname:this.firstname, email:this.email })
+
+}
+```
 
 **Rules** in JavaScript :
 * Mail is not null and correct
@@ -205,6 +239,47 @@ The view must have information of previous creating user :
 >- Phone
 >- Country
 >- ...
+
+There are exemple in `src/front/src/user/userGrid.vue`.You must to add list code html in :
+```HTML
+<template>
+  <div>
+    <div>
+      <div>
+        list users
+      </div>
+    </div>
+    ...
+  </div>
+</template>
+```
+Function of component :
+* computed
+`newUserList`: Should return the value contained in the store's module
+`newUserList`: Should return the list displayed
+
+* methods
+`changeQueryHandler`: Triggered when a child is trying to change the query (see the mixin's watcher)
+`selectUser` : return item when you click in line.
+`updateRoute` : Triggered when a child is trying to change the query
+
+In function `changeQueryHandler`add in `this.dataList` the users data. Update `this.total` for manage the pagination.
+
+exemple :
+
+```JavaScript
+changeQueryHandler: function(query) {
+  //Triggered when a child is trying to change the query (see the mixin's watcher)
+
+  var self = this;
+  ajax.get("/user").then(function(d){
+    self.dataList = d.data.meta;
+    self.total = d.data.total;
+    return d.data.meta
+  });
+
+}
+```
 
 You have **one day** for this Work. If you have a problem or error, you can contact me.
 

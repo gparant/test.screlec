@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div > Créez un utilisateur</div>
+    <div > Create user</div>
     <form >
         <div>
           <span>Name</span>
@@ -16,7 +16,7 @@
           <span>Email</span>
           <input type="text" v-model="email"/>
         </div>
-        <div @click="submit">Valider</div>
+        <div class="btn btn-success" @click="submit">Valider</div>
     </form>
   </div>
 </template>
