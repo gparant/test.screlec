@@ -36,8 +36,8 @@ Expected company :
 ajax.get("/user/current/").then(function(d) {
   user = d.data;
   //menuSelector, headerSelector, companyService, user
-  template = new ScrelecTemplate.create("#menu", "#header", new CompanyService("/entity"), user);
+  //template = new ScrelecTemplate.create("#menu", "#header", new CompanyService("/company"), user);
 });
 
 appConfig.router = router;
-var app = new Vue(appConfig).$mount("#content"); // Id of the content
+var app = new Vue(appConfig).$mount("#content");

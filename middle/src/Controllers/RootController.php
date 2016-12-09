@@ -11,6 +11,7 @@ use Mouf\Html\HtmlElement\HtmlBlock;
 use \Twig_Environment;
 use Mouf\Html\Renderer\Twig\TwigTemplate;
 use Mouf\Mvc\Splash\HtmlResponse;
+use Zend\Diactoros\Response\JsonResponse;
 
 /**
  * TODO: write controller comment
@@ -60,12 +61,82 @@ class RootController {
     }
 
     /**
-     * @URL("/test")
+     * @URL("/user/current/")
+     */
+    public function userCurent(){
+        return new JsonResponse(array(
+            [
+                "rights" => ["CRM", "INVOICE", "DEMANDE", "CONTRACT"],
+                "notificationList" => [
+                    ["company_id" => "foo-company-id", "content" => "FooContent", "app_id" => "foo-app"],
+                    ["company_id" => "baz-company-id", "content" => "BazContent", "app_id" => "baz-app"],
+                    ["company_id" => "nurf-company-id", "content" => "NurfContent", "app_id" => "nurf-app"],
+                    ["company_id" => "xorf-company-id", "content" => "XorfContent", "app_id" => "xorf-app"],
+                    ["company_id" => "gyn-company-id", "content" => "GynContent", "app_id" => "gyn-app"],
+                    ["company_id" => "foo-company-id", "content" => "fikngsjn", "app_id" => "foo-app"]
+                ],
+                "firstname" => "FooName",
+                "name" => "FooFirstname",
+                "email" => "Foo@thecodingmachine.com"
+            ]
+        ));
+    }
+
+    /**
+     * @URL("/user/")
+     * @Get()
+     *
+     */
+    public function users(){
+        return new JsonResponse(array(
+            "total"=>4,
+                "meta"=>[
+                    [
+                        "id" => 1,
+                        "firstname" => "FooName",
+                        "name" => "FooFirstname",
+                        "email" => "Foo@thecodingmachine.com"
+                    ],
+                    [
+                        "id" => 2,
+                        "firstname" => "FooName",
+                        "name" => "FooFirstname",
+                        "email" => "Foo@thecodingmachine.com"
+                    ],
+                    [
+                        "id" => 3,
+                        "firstname" => "FooName",
+                        "name" => "FooFirstname",
+                        "email" => "Foo@thecodingmachine.com"
+                    ],
+                    [
+                        "id" => 4,
+                        "firstname" => "FooName",
+                        "name" => "FooFirstname",
+                        "email" => "Foo@thecodingmachine.com"
+                    ]
+                ]
+        ));
+    }
+
+    /**
+     * @URL("/user")
      * @Post()
      *
-     * @param string $value
+     * @param string $name
+     * @param string $firstname
+     * @param string $email
+     * @return JsonResponse
      */
-    public function test(string $value){
-        //TO DO treatment
+    public function test(string $name, string $firstname, string $email){
+        return new JsonResponse(array(
+           "return"=>["user"=>
+                   [
+                   "name"=>$name,
+                    "firstname"=>$firstname,
+                    "email"=>$email
+                    ]
+               ]
+        ));
     }
 }

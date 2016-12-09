@@ -436,6 +436,49 @@ $moufManager->addComponentInstances(array (
     'external' => false,
     'weak' => false,
   ),
+  'Screlec/Middle/Template/ScrelecTemplate' => 
+  array (
+    'class' => 'Screlec\\Middle\\Template\\ScrelecTemplate',
+    'external' => false,
+    'weak' => false,
+    'constructor' => 
+    array (
+      0 => 
+      array (
+        'value' => 'userService',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+    'setterProperties' => 
+    array (
+      'setTitle' => 
+      array (
+        'value' => 'Project Test',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+    'setterBinds' => 
+    array (
+      'setLeft' => 'block.left',
+      'setRight' => 'block.right',
+      'setHeader' => 'block.header',
+      'setFooter' => 'block.footer',
+      'setContent' => 'block.content',
+      'setWebLibraryManager' => 'defaultWebLibraryManager',
+      'setTemplateRenderer' => 'customRenderer',
+      'setDefaultRenderer' => 'defaultRenderer',
+    ),
+    'fieldProperties' => 
+    array (
+    ),
+  ),
   '__anonymous__2e32_115194622' => 
   array (
     'class' => 'Mouf\\Mvc\\Splash\\Routers\\Router',
@@ -1411,7 +1454,7 @@ return $driver;
     array (
       0 => 
       array (
-        'value' => 'bootstrapTemplate',
+        'value' => 'Screlec/Middle/Template/ScrelecTemplate',
         'parametertype' => 'object',
         'type' => 'string',
         'metadata' => 
@@ -1943,6 +1986,13 @@ return rtrim(sys_get_temp_dir(), '/\\').'/mouftwigtemplatemain_'.$posixGetuid.st
 	 */
 	 public static function getPsr7MiddlewaresMiddlewarePayload() {
 	 	return MoufManager::getMoufManager()->get('Psr7Middlewares\\Middleware\\Payload');
+	 }
+
+	/**
+	 * @return Screlec\Middle\Template\ScrelecTemplate
+	 */
+	 public static function getScrelecMiddleTemplateScrelecTemplate() {
+	 	return MoufManager::getMoufManager()->get('Screlec/Middle/Template/ScrelecTemplate');
 	 }
 
 	/**
